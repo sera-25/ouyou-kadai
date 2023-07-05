@@ -6,17 +6,17 @@ class BookCommentsController < ApplicationController
     comment.save
     redirect_to request.referer
   end
-  
+
   def destroy
-    comment = Book.find(params[:book_id])
+    comment = BookComment.find(params[:id])
     comment.destroy
     redirect_to request.referer
   end
-  
+
   private
-  
+
   def book_comment_params
     params.require(:book_comment).permit(:comment)
   end
-  
+
 end
