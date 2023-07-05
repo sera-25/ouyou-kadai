@@ -3,7 +3,7 @@ class RelationshipsController < ApplicationController
 
   def create
     user = User.find(params[:user_id])
-    crrent_user.follow(user)
+    current_user.follow(user)
     redirect_to request.referer
   end
 
